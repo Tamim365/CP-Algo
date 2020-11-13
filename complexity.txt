@@ -1,0 +1,24 @@
+BFS:
+    O(V+E) -> Adjacency List
+    O(V^2) -> Adjacency Matrix
+
+DFS:
+    O(V+E) -> Adjacency List
+    O(V^2) -> Adjacency Matrix
+
+Binary Search Tree:
+                   Worst        Average
+    Insertion   -> O(N)         O(logN)
+    Deletion    -> O(N)         O(logN)
+    Search      -> O(N)         O(logN)
+
+Heap:
+    Insertion   -> O(logN)
+    Find-min    -> O(1)
+    Delete-min  -> O(logN)
+    Search      -> O(N)
+    Heapify     -> O(logN)
+
+MST:
+    Prims   -> O((V+E)logV) [using priority queue]
+    Kruskal -> O(ElogV) [using Disjoint-Set]

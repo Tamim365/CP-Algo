@@ -8,6 +8,7 @@ struct knuth
 {
     string text, pattern;
     vector<int> LPS_Table;
+    vector<int> patternFoundPosition;
     knuth(string txt, string ptrn)
     {
         text = txt;
@@ -27,11 +28,11 @@ struct knuth
             LPS_Table[i] = j;
         }
     }
-    bool KMP(string text, string pattern)
+    void KMP(string text, string pattern)
     {
         int i=0;
         int j=0;
-        while(i < text.length() && j < pattern.length())
+        while(i < text.length())
         {
             if(text[i] == pattern[j])
             {
@@ -43,18 +44,32 @@ struct knuth
                 if(j!=0) j = LPS_Table[j-1];
                 else i++;
             }
+            if(j == pattern.length())
+            {
+                patternFoundPosition.push_back(i - j);
+                j = LPS_Table[j-1];
+            }
         }
-        if(j == pattern.length())
-            return true;
-        return false;
     }
     void printLPS()
     {
+        cout << "LPS table: ";
         for (int i = 0; i < LPS_Table.size(); i++)
         {
             cout << LPS_Table[i] << ' ';
         }
         cout << endl;
+    }
+    void printPosition()
+    {
+        if(patternFoundPosition.size()){
+            cout << "Pattern Occurs at: ";
+            for (int i = 0; i < patternFoundPosition.size(); i++)
+                cout << patternFoundPosition[i] << ' ';
+            cout << endl;
+        }
+        else
+            cout << "Not Found" << endl;
     }
 };
 
@@ -67,6 +82,7 @@ int main(){
     cin >> text >> pattern;
     knuth kmp(text, pattern);
     kmp.printLPS();
-    cout << kmp.KMP(kmp.text, kmp.pattern);
+    kmp.KMP(kmp.text, kmp.pattern);
+    kmp.printPosition();
     return 0;
 }

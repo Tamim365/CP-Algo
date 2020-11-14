@@ -1,3 +1,8 @@
+/*
+    * indexing are 0-based
+    * doesnot compute different sub-strings
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 

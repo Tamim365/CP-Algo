@@ -98,4 +98,27 @@ int main()
     bfs(src);
     int des = 5;
     printPath(des);
+    return 0;
 }
+
+/*
+complexity: O(V+E)
+input: (https://media.geeksforgeeks.org/wp-content/uploads/binary-Graph.png)
+8 14
+0 1
+1 2
+2 3
+2 5
+3 4
+3 5
+4 5
+5 6
+6 7
+6 8
+7 8
+7 1
+7 0
+8 2
+output:
+0 1 2 5 
+*/

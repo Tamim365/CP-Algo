@@ -91,3 +91,12 @@ int main(){
     kmp.printPosition();
     return 0;
 }
+/*
+complexity: O(M+N)
+input:
+AABABBABBAA
+BABB
+output:
+LPS table: 0 0 1 1 
+Pattern Occurs at: 2 5
+*/

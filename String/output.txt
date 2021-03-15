@@ -1,2 +1,0 @@
-LPS table: 0 0 1 1 
-Pattern Occurs at: 2 5 

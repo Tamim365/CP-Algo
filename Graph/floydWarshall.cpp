@@ -5,6 +5,8 @@
     * Initially, the size of the distance (i, i) is zero. 
     * A path [i, k…i] can only improve upon this if it has a length less than zero, i.e., denotes a negative cycle. 
     * Thus, after the algorithm, (i, i) will be negative if there exists a negative-length path from i back to i.
+    * source: https://cp-algorithms.com/graph/all-pair-shortest-path-floyd-warshall.html
+    * source: https://www.techiedelight.com/pairs-shortest-paths-floyd-warshall-algorithm/
 */
 
 #include<bits/stdc++.h>
